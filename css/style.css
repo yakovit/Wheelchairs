@@ -1,0 +1,196 @@
+/* עיצוב כללי */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* כרטיסיות */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  min: 400px !important; /* מגדיר גובה מינימלי לכרטיסיות */
+  height: 100%; /* מבטיח שהכרטיסיות יתפסו את אותו גובה */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* עיצוב לכותרת */
+header {
+  background: rgba(0, 0, 0, 0.5); /* רקע שקוף מעל התמונה */
+  color: white; /* צבע הטקסט */
+  text-align: center;
+  padding: 50px 0;
+  background-image: url("img/HIT.png") !important; /* נתיב לתמונה */
+}
+#backToTop {
+  background-color: #306E66; /* טורקיז */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #0056b3;
+}
+.card-body {
+  flex-grow: 1; /* דוחף את התוכן למלא את החלק הפנוי */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* מפזר את התוכן באופן שווה */
+}
+
+.card-img-top {
+  width: 70%; /* התאמת רוחב התמונה לרוחב הכרטיס */
+  object-position: center !important; /* מיקום התמונה בתוך המסגרת */
+  height: 100%; /* גובה אחיד לתמונות */
+  object-fit: cover; /* מתאים את התמונה למסגרת */
+}
+
+.card-text {
+  flex-grow: 1; /* דוחף את הטקסט למלא את המקום הזמין */
+}
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: gray; /* צבע ברירת מחדל */
+  z-index: 1;
+}
+
+.favorite-icon.active {
+  color: red; /* צבע הלב כשהוא לחוץ */
+}
+/* חשוב: מוודא שהלב נמצא בכרטיסיה */
+.card {
+  position: relative;
+}
+/* עיצוב ה-header */
+.header-with-image {
+  position: relative;
+  height: 70vh; /* גובה מלא של המסך */
+  width: 100%;
+  overflow: hidden; /* מונע גלילה של התמונה */
+}
+.header-with-image h1 {
+  font-size: 4rem; /* גודל כותרת ראשית */
+  color: #ffffff; /* צבע לבן */
+  margin-bottom: 10px; /* ריווח מתחת לכותרת */
+}
+
+.header-with-image p {
+  font-size: 1.5rem; /* גודל הטקסט בפסקה */
+  font-weight: 400; /* משקל גופן רגיל */
+  color: #f0f0f0; /* צבע אפור בהיר */
+  margin-top: 0; /* מניעת ריווח מיותר למעלה */
+  line-height: 1.6; /* גובה שורה נוח לקריאה */
+}
+/* עיצוב התמונה */
+.header-with-image .header-image {
+  width: 120%; /* תמונה תתאים לרוחב הדף */
+  height: 120%; /* גובה מלא */
+  object-fit: cover; /* שמירה על פרופורציות */
+  position: absolute;
+  top: -30px; /* הזזה למעלה */
+  left: -50px; /* הזזה שמאלה */
+  z-index: 1; /* תמונה נמצאת מתחת לטקסט */
+}
+
+/* שכבת כהות מעל התמונה */
+.header-with-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* שכבת כהות למחצה */
+  z-index: 2; /* שכבה מעל התמונה */
+}
+
+/* עיצוב הטקסט */
+.header-with-image .container {
+  position: relative;
+  z-index: 3; /* מבטיח שהטקסט ייראה מעל השכבות */
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%); /* ממרכז את הטקסט אנכית */
+}
+/* שינוי צבע לכפתורי bootstrap */
+.btn-primary {
+  background-color: #306E66; /* צבע טורקיז */
+  border-color: #306E66; /* צבע מסגרת הכפתור */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #36c1b0; /* גוון כהה יותר לטורקיז במעבר עכבר */
+  border-color: #36c1b0;
+}
+
+/* עיצוב נוסף לכפתורים */
+button {
+  border-radius: 5px; /* עיגול פינות לכפתורים */
+}
+/* כפתור החיפוש בצבע טורקיז */
+#searchButton {
+  background-color: #306E66; /* טורקיז */
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#searchButton:hover,
+#searchButton:focus {
+  background-color: #36c1b0; /* כהה יותר בטורקיז */
+  color: white;
+}
+#backToTop:hover,
+#backToTop:focus {
+  background-color: #36c1b0; /* צבע כהה יותר במעבר עכבר */
+  color: white;
+}
+/* עיצוב תפריט ניווט בצבע טורקיז */
+.navbar {
+  background-color: #306E66 !important; /* רקע בצבע טורקיז */
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: white !important; /* צבע טקסט לבן */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+  color: #f0f0f0 !important; /* צבע בהיר יותר במעבר עכבר */
+}
+
+/* עיצוב הכפתור של התפריט (למובייל) */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.7); /* צבע גבול טורקיז בהיר */
+}
+
+.navbar-toggler-icon {
+  background-color: white; /* אייקון התפריט בצבע לבן */
+  border-radius: 2px;
+}
+
+
+
+
+
+
+
+
+
+
